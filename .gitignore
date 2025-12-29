@@ -97,3 +97,5 @@ terraform/kubectl
 kubectl
 terraform/kubectl
 kubectl
+kubectl
+terraform/kubectl
