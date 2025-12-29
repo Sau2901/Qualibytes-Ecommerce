@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gradient: hsl(221, 83%, 53%); /* BLUE GRADIENT */
+
+    --background: 220, 14%, 96%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* PRIMARY BLUE THEME */
+    --primary: 221, 83%, 53%;           /* BLUE-600 */
+    --primary-foreground: 0 0% 100%;    /* White text */
+
+    --secondary: 0, 0%, 100%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240, 13%, 88%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 0, 0%, 96%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0, 79%, 49%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+
+    --ring: 221, 83%, 53%; /* Blue focus ring */
+
+    --radius: 0.5rem;
+
+    --scroll-bg: #f0f0f0;
+    --scroll-thumb: #d4d4d4;
+
+    background-color: #001c29;
+  }
+
+  /* DARK MODE — BLUE THEME */
+  .dark {
+    --background: 198, 100%, 5%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 71.4% 4.1%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 193, 82%, 4%;
+    --popover-foreground: 210 20% 98%;
+
+    /* Dark mode BLUE primary */
+    --primary: 217, 91%, 60%; /* Blue-500/400 blend */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 196, 75%, 8%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 199, 100%, 6%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0, 79%, 49%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+
+    --ring: 217 91% 60%;
+
+    --radius: 0.5rem;
+
+    --scroll-bg: #000b10;
+    --scroll-thumb: #00293b;
+
+    background-color: hsl(240, 13%, 88%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground scroll-smooth;
+  }
+}
+
+.bg-gradient {
+  background: var(--gradient)
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: var(--radius);
+  background-color: var(--scroll-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  border-radius: var(--radius);
+  background-color: var(--scroll-thumb);
+}
+
+.narrowScrollbar::-webkit-scrollbar {
+  @apply w-1 h-1 rounded-lg bg-slate-200 dark:bg-slate-800;
+}
+
+.narrowScrollbar::-webkit-scrollbar-thumb {
+  @apply w-1 h-1 rounded-lg bg-slate-300 hover:bg-slate-400 cursor-pointer dark:bg-slate-600 dark:hover:bg-slate-500;
+}
+
+/* PRODUCT GRID */
+.grid-layout {
+  @apply grid grid-cols-1 min-[360px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 md:gap-5 2xl:gap-6 max-w-[2700px] min-[1700px]:grid-cols-6 mx-auto;
+}
+
+/* SKELETON EFFECT */
+:is(.dark .inner-skeleton) {
+  background: linear-gradient(100deg, transparent, #002333, transparent);
+}
+
+.inner-skeleton {
+  animation: skeleton 1.4s ease-in-out infinite;
+  background: linear-gradient(100deg, transparent, #f3f3f3, transparent);
+}
+
+@keyframes skeleton {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(200%); }
+}
+
+/* INPUT NUMBER FIX */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* EMBLA SLIDER */
+.embla {
+  max-width: 48rem;
+  margin: auto;
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 100%;
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+
+/* Loader Dots — Blue Version */
+.loader_dots {
+  --dim: 3rem;
+  width: var(--dim);
+  height: var(--dim);
+  position: relative;
+  animation: spin988 2s linear infinite;
+}
+
+.loader_dots .circle {
+  --dim: 1.2rem;
+  width: var(--dim);
+  height: var(--dim);
+  background-color: hsl(var(--primary));
+  border-radius: 50%;
+  position: absolute;
+}

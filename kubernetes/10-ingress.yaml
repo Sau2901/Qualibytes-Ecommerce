@@ -1,0 +1,50 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: qbshop-ingress
+  namespace: qbshop
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+spec:
+  ingressClassName: nginx
+
+  tls:
+    - hosts:
+        - asriv.shop
+        - qbshop.asriv.shop
+        - www.qbshop.asriv.shop
+      secretName: qbshop-tls-secret
+
+  rules:
+    - host: asriv.shop
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: qbshop-service
+                port:
+                  number: 80
+
+    - host: qbshop.asriv.shop
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: qbshop-service
+                port:
+                  number: 80
+
+    - host: www.qbshop.asriv.shop
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: qbshop-service
+                port:
+                  number: 80
