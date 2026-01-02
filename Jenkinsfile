@@ -5,8 +5,8 @@ pipeline {
     
     environment {
         // Updated image names for QBShop project (DEV)
-        DOCKER_IMAGE_NAME = 'satyamsri/qbshop-app'
-        DOCKER_MIGRATION_IMAGE_NAME = 'satyamsri/qbshop-migration'
+        DOCKER_IMAGE_NAME = 'sau2901/qbshop-app'
+        DOCKER_MIGRATION_IMAGE_NAME = 'sau2901/qbshop-migration'
         DOCKER_IMAGE_TAG = "${BUILD_NUMBER}"
         GITHUB_CREDENTIALS = credentials('github-credentials')
         GIT_BRANCH = "dev"
@@ -25,7 +25,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 script {
-                    clone("https://github.com/Satyams-git/Qualibytes-Ecommerce.git", "dev")
+                    clone("https://github.com/Sau2901/Qualibytes-Ecommerce.git", "dev")
                 }
             }
         }
