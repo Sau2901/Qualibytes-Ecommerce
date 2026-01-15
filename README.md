@@ -1,4 +1,4 @@
-# 🛍️ QualiBytesShop - Modern E-commerce Platform
+# 🛍️ QuickBasket-Ecommerce - Modern E-commerce Platform
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.1.0-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
@@ -6,7 +6,7 @@
 [![Redux](https://img.shields.io/badge/Redux-2.2.1-purple?style=flat-square&logo=redux)](https://redux.js.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-QualiBytesShop is a modern, full-stack e-commerce platform built with Next.js 14, TypeScript, and MongoDB. It features a beautiful UI with Tailwind CSS, secure authentication, real-time cart updates, and a seamless shopping experience.
+QuickBasket-Ecommerce is a modern, full-stack e-commerce platform built with Next.js 14, TypeScript, and MongoDB. It features a beautiful UI with Tailwind CSS, secure authentication, real-time cart updates, and a seamless shopping experience.
 
 ## ✨ Features
 
@@ -22,7 +22,7 @@ QualiBytesShop is a modern, full-stack e-commerce platform built with Next.js 14
 
 ## 🏗️ Architecture
 
-QualiBytesShop follows a three-tier architecture pattern:
+QuickBasket follows a three-tier architecture pattern:
 
 ### 1. Presentation Tier (Frontend)
 - Next.js React Components
@@ -105,7 +105,7 @@ Create a new SSH key to access your EC2 instance:
 ```bash
 ssh-keygen -f qualibytes-key
 ```
-This will prompt you to create a new key file named qualibytes-key.
+This will prompt you to create a new key file named QuickBasket-key.
 
 3. **Private key permission:** Change your private key permission:
 ```bash
@@ -495,5 +495,5 @@ kubectl get svc nginx-ingress-ingress-nginx-controller -n ingress-nginx -o jsonp
 ## **Congratulations!** <br/>
 
 ### Your project is now deployed.
-# Qualibytes-Ecommerce
-# Qualibytes-Ecommerce
+# QuickBasket-Ecommerce
+# QuickBasket-Ecommerce
